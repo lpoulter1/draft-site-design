@@ -1,4 +1,5 @@
 import "./App.css";
+import avatarIcon from "./assets/avatarIcon.svg";
 
 function App() {
   return (
@@ -86,6 +87,27 @@ function App() {
                     <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                   </svg>
                 </span>
+                <span className="ml-3">Table</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="flex flex-row items-center h-10 px-3 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-gray-100"
+              >
+                <span className="flex items-center justify-center text-lg text-gray-400">
+                  <svg
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                </span>
                 <span className="ml-3">Transfers</span>
               </a>
             </li>
@@ -98,16 +120,13 @@ function App() {
             <div className="flex ml-auto">
               <a href className="flex flex-row items-center">
                 <img
-                  src="https://pbs.twimg.com/profile_images/378800000298815220/b567757616f720812125bfbac395ff54_normal.png"
+                  src={avatarIcon}
                   alt
                   className="w-10 h-10 bg-gray-200 border rounded-full"
                 />
                 <span className="flex flex-col ml-2">
                   <span className="w-20 font-semibold leading-none tracking-wide truncate">
-                    John Doe
-                  </span>
-                  <span className="w-20 mt-1 text-xs leading-none text-gray-500 truncate">
-                    Manager
+                    Laurie Poulter
                   </span>
                 </span>
               </a>
