@@ -43,7 +43,7 @@ const managerData = {
 
 function ManagerTable() {
   return (
-    <table className="text-right border border-gray-100 table-auto w-[600px] h-2/4 mt-10 ">
+    <table className="text-right border border-gray-100 table-auto w-[600px] h-2/4">
       <thead className="text-gray-100 bg-gray-700">
         <tr>
           <th className="px-4 py-3 ">Rank</th>
@@ -202,8 +202,12 @@ function App() {
         </header>
 
         <div className="container px-6 mx-auto md:px-10 lg:px-12">
-          <div className="text-gray-100">
-            <h2 className="text-4xl">League Name</h2>
+          <div className="text-gray-100 ">
+            <h2 className="mb-8 text-4xl">League Name</h2>
+            <h3 className="mb-2 text-2xl">
+              GW 32{" "}
+              <span className="text-sm font-thin text-emerald-500">live</span>
+            </h3>
           </div>
           <div className="flex h-full text-gray-700">
             <ManagerTable />
