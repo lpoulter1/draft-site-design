@@ -18,7 +18,7 @@ const managerData = {
       tot: 1467,
     },
     {
-      rank: 2,
+      rank: 3,
       team: "Bats in the loft",
       manager: "Laurie",
       gw: 37,
@@ -185,7 +185,7 @@ function TopScoringPlayers() {
 
 function ManagerTable() {
   return (
-    <table className=" border border-gray-500 table-auto w-full sm:w-[600px] h-2/4 text-gray-500 text-sm">
+    <table className=" border border-gray-500 table-auto w-full sm:w-[600px] h-2/4 text-gray-600 text-sm">
       <thead className="text-gray-100 bg-violet-600 sm:text-left">
         <tr>
           <th className="px-2 py-3 sm:py-2 sm:px-4">Rank</th>
@@ -200,7 +200,7 @@ function ManagerTable() {
             <td className="px-2 py-3 sm:py-2 sm:px-4">{manager.rank}</td>
             <td className="px-2 py-3 sm:py-2 sm:px-4">
               <div>{manager.team}</div>
-              <div className="text-xs">{manager.manager}</div>
+              <div className="text-xs text-gray-500">{manager.manager}</div>
             </td>
             <td className="px-2 py-3 sm:py-2 sm:px-4">{manager.gw}</td>
             <td className="px-2 py-3 sm:py-2 sm:px-4 ">{manager.tot}</td>
@@ -265,15 +265,18 @@ function App() {
               >
                 <span className="flex items-center justify-center text-lg text-gray-400">
                   <svg
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.5rem"
+                    height="1.5rem"
                     strokeWidth="2"
+                    fill="none"
                     viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6"
                   >
-                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    <path
+                      fill="currentColor"
+                      d="M5 2a1 1 0 0 0-.447.106L1.106 3.829A2 2 0 0 0 0 5.618v3.764a2 2 0 0 0 2.894 1.789L4 10.618V19a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-8.382l1.106.553A2 2 0 0 0 24 9.382V5.618a2 2 0 0 0-1.106-1.789l-3.447-1.723A1 1 0 0 0 19 2h-3a2 2 0 0 0-2 2 2 2 0 1 1-4 0 2 2 0 0 0-2-2H5ZM4 4.618v3.764l-2 1V5.618l2-1ZM8 4H6v15a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V4h-2a4 4 0 0 1-8 0Zm14 1.618-2-1v3.764l2 1V5.618ZM10 12.5a.5.5 0 0 1 1 0v2a.5.5 0 0 1-1 0v-2Zm.5-2.5A2.5 2.5 0 0 0 8 12.5v2a2.5 2.5 0 0 0 5 0v-2a2.5 2.5 0 0 0-2.5-2.5Zm3.5 0a1 1 0 1 0 0 2v4a1 1 0 1 0 2 0v-5a1 1 0 0 0-1-1h-1Z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </span>
                 <span className="ml-3">Pick Team</span>
@@ -286,15 +289,17 @@ function App() {
               >
                 <span className="flex items-center justify-center text-lg text-gray-400">
                   <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.5rem"
+                    height="1.5rem"
                     fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
                     viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6"
                   >
-                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      d="M15 9h6v9c0 .943 0 1.414-.293 1.707C20.414 20 19.943 20 19 20h-4V9ZM3 9h6v11H5c-.943 0-1.414 0-1.707-.293C3 19.414 3 18.943 3 18V9ZM9 9h6v11H9zM3 6c0-.943 0-1.414.293-1.707C3.586 4 4.057 4 5 4h14c.943 0 1.414 0 1.707.293C21 4.586 21 5.057 21 6v3H3V6Z"
+                    />
                   </svg>
                 </span>
                 <span className="ml-3">Table</span>
@@ -307,15 +312,18 @@ function App() {
               >
                 <span className="flex items-center justify-center text-lg text-gray-400">
                   <svg
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.5rem"
+                    height="1.5rem"
                     strokeWidth="2"
+                    fill="none"
                     viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6"
                   >
-                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    <path
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      d="M19.5 16.5H6m-.5-8H19M16 13l3.5 3.5L16 20m-7-8L5.5 8.5 9 5"
+                    />
                   </svg>
                 </span>
                 <span className="ml-3">Transfers</span>
@@ -328,10 +336,10 @@ function App() {
         <header className="w-full px-4 py-4">
           <div className="flex flex-row items-center header-content">
             <div className="flex ml-auto">
-              <a href className="flex flex-row items-center">
+              <a href="" className="flex flex-row items-center">
                 <img
                   src={avatarIcon}
-                  alt
+                  alt="avatar"
                   className="w-10 h-10 bg-gray-200 border rounded-full"
                 />
                 <span className="flex flex-col ml-2">
