@@ -214,6 +214,31 @@ function ManagerTable() {
 function App() {
   return (
     <div className="flex flex-row min-h-screen overflow-scroll text-gray-100 bg-gray-700">
+      <button className="w-8 h-8 p-4 cursor-pointer display:block md:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-8 h-8 text-gray-100"
+        >
+          <line
+            x1="4.8"
+            y1="9.6"
+            x2="27.2"
+            y2="9.6"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeLinecap="round"
+          ></line>
+          <line
+            x1="27.2"
+            y1="22.4"
+            x2="4.8"
+            y2="22.4"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeLinecap="round"
+          ></line>
+        </svg>
+      </button>
       <aside className="hidden w-[256px] bg-gray-900 md:shadow md:block shrink-0">
         <div className="flex items-center justify-center py-4">
           <div className="inline-flex">
