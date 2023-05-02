@@ -1,6 +1,73 @@
 import "./App.css";
 import avatarIcon from "./assets/avatarIcon.svg";
 
+const managerData = {
+  data: [
+    {
+      rank: 1,
+      team: "DON'T LET THIS SLIP!",
+      manager: "James",
+      gw: 34,
+      tot: 1659,
+    },
+    {
+      rank: 2,
+      team: "ChickenTikka MoSalah",
+      manager: "Sean",
+      gw: 44,
+      tot: 1467,
+    },
+    {
+      rank: 2,
+      team: "Bats in the loft",
+      manager: "Laurie",
+      gw: 37,
+      tot: 1467,
+    },
+    {
+      rank: 4,
+      team: "Bruce'll Fix It",
+      manager: "Nicholas",
+      gw: 33,
+      tot: 1377,
+    },
+    {
+      rank: 5,
+      team: "Jealous of Jesus",
+      manager: "Ben",
+      gw: 39,
+      tot: 1283,
+    },
+  ],
+};
+
+function ManagerTable() {
+  return (
+    <table className="text-right border border-gray-100 table-auto w-[600px] h-2/4 mt-10 ">
+      <thead className="text-gray-100 bg-gray-700">
+        <tr>
+          <th className="px-4 py-3 ">Rank</th>
+          <th className="px-4 py-3 text-left">Team</th>
+          <th className="px-4 py-3 ">Manager</th>
+          <th className="px-4 py-3 ">GW</th>
+          <th className="px-4 py-3 ">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {managerData.data.map((manager) => (
+          <tr className="odd:bg-white even:bg-gray-100" key={manager.rank}>
+            <td className="px-4 py-3 ">{manager.rank}</td>
+            <td className="px-4 py-3 text-left">{manager.team}</td>
+            <td className="px-4 py-3 ">{manager.manager}</td>
+            <td className="px-4 py-3 ">{manager.gw}</td>
+            <td className="px-4 py-3 ">{manager.tot}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
 function App() {
   return (
     <div className="flex flex-row min-h-screen text-gray-100 bg-gray-700">
@@ -26,7 +93,7 @@ function App() {
           </div>
         </div>
         <div className="px-4 py-6 sidebar-content">
-          <ul className="flex flex-col w-full gap-2">
+          <ul className="flex flex-col w-full gap-6 uppercase">
             <li>
               <a
                 href="#"
@@ -115,7 +182,7 @@ function App() {
         </div>
       </aside>
       <main className="flex flex-col flex-grow -ml-64 text-gray-100 transition-all duration-150 ease-in main md:ml-0">
-        <header className="px-4 py-4 shadow header">
+        <header className="px-4 py-4 header">
           <div className="flex flex-row items-center header-content">
             <div className="flex ml-auto">
               <a href className="flex flex-row items-center">
@@ -133,10 +200,14 @@ function App() {
             </div>
           </div>
         </header>
-        <div className="flex flex-col flex-grow p-4 main-content">
-          <h1 className="text-2xl font-bold">Dashboard</h1>
 
-          <div className="flex flex-col flex-grow mt-4 bg-white border-4 border-gray-400 border-dashed rounded"></div>
+        <div className="container px-6 mx-auto md:px-10 lg:px-12">
+          <div className="text-gray-100">
+            <h2 className="text-4xl">League Name</h2>
+          </div>
+          <div className="flex h-full text-gray-700">
+            <ManagerTable />
+          </div>
         </div>
       </main>
     </div>
