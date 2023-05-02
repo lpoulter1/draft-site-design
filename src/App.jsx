@@ -185,24 +185,25 @@ function TopScoringPlayers() {
 
 function ManagerTable() {
   return (
-    <table className="text-right border border-gray-500 table-auto w-[600px] h-2/4 text-gray-500">
-      <thead className="text-gray-100 bg-violet-600">
+    <table className=" border border-gray-500 table-auto w-full sm:w-[600px] h-2/4 text-gray-500 text-sm">
+      <thead className="text-gray-100 bg-violet-600 sm:text-left">
         <tr>
-          <th className="px-4 py-3 ">Rank</th>
-          <th className="px-4 py-3 text-left">Team</th>
-          <th className="px-4 py-3 ">Manager</th>
-          <th className="px-4 py-3 ">GW</th>
-          <th className="px-4 py-3 ">Total</th>
+          <th className="px-2 py-3 sm:py-2 sm:px-4">Rank</th>
+          <th className="px-2 py-3 sm:py-2 sm:px-4">Team</th>
+          <th className="px-2 py-3 sm:py-2 sm:px-4">GW</th>
+          <th className="px-2 py-3 sm:py-2 sm:px-4">Total</th>
         </tr>
       </thead>
       <tbody>
         {managerData.data.map((manager) => (
-          <tr className="odd:bg-white even:bg-gray-100" key={manager.rank}>
-            <td className="px-4 py-3 ">{manager.rank}</td>
-            <td className="px-4 py-3 text-left">{manager.team}</td>
-            <td className="px-4 py-3 ">{manager.manager}</td>
-            <td className="px-4 py-3 ">{manager.gw}</td>
-            <td className="px-4 py-3 ">{manager.tot}</td>
+          <tr className=" odd:bg-white even:bg-gray-100" key={manager.rank}>
+            <td className="px-2 py-3 sm:py-2 sm:px-4">{manager.rank}</td>
+            <td className="px-2 py-3 sm:py-2 sm:px-4">
+              <div>{manager.team}</div>
+              <div className="text-xs">{manager.manager}</div>
+            </td>
+            <td className="px-2 py-3 sm:py-2 sm:px-4">{manager.gw}</td>
+            <td className="px-2 py-3 sm:py-2 sm:px-4 ">{manager.tot}</td>
           </tr>
         ))}
       </tbody>
@@ -212,9 +213,9 @@ function ManagerTable() {
 
 function App() {
   return (
-    <div className="flex flex-row min-h-screen text-gray-100 bg-gray-700">
-      <aside className="w-64 transition-transform duration-150 ease-in transform -translate-x-full bg-gray-900 md:shadow md:translate-x-0">
-        <div className="flex items-center justify-center py-4 sidebar-header">
+    <div className="flex flex-row min-h-screen overflow-scroll text-gray-100 bg-gray-700">
+      <aside className="hidden w-[256px] bg-gray-900 md:shadow md:block shrink-0">
+        <div className="flex items-center justify-center py-4">
           <div className="inline-flex">
             <a href="#" className="inline-flex flex-row items-center">
               <svg
@@ -323,8 +324,8 @@ function App() {
           </ul>
         </div>
       </aside>
-      <main className="flex flex-col flex-grow -ml-64 overflow-y-scroll text-gray-100 transition-all duration-150 ease-in main md:ml-0">
-        <header className="px-4 py-4 header">
+      <main className="flex flex-col w-full text-gray-100">
+        <header className="w-full px-4 py-4">
           <div className="flex flex-row items-center header-content">
             <div className="flex ml-auto">
               <a href className="flex flex-row items-center">
@@ -345,7 +346,7 @@ function App() {
 
         <div className="container px-6 mx-auto text-gray-100 md:px-10 lg:px-12">
           <div className="">
-            <h2 className="mb-8 text-4xl">League Name</h2>
+            <h2 className="mb-8 text-4xl">Drafty Boys</h2>
           </div>
           <div className="flex flex-col justify-between h-full md:flex-row">
             <div>
