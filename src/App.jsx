@@ -41,10 +41,152 @@ const managerData = {
   ],
 };
 
+const topScoringPlayers = {
+  players: [
+    {
+      id: 12,
+      webName: "Lukaku",
+      gwPoints: 15,
+      manager: "Sean",
+    },
+    {
+      id: 19,
+      webName: "Foden",
+      gwPoints: 12,
+      manager: "Nicholas",
+    },
+    {
+      id: 10,
+      webName: "Sterling",
+      gwPoints: 11,
+      manager: "Ben",
+    },
+    {
+      id: 1,
+      webName: "Trippier",
+      gwPoints: 10,
+      manager: "Ben",
+    },
+    {
+      id: 6,
+      webName: "Ronaldo",
+      gwPoints: 9,
+      manager: "James",
+    },
+    {
+      id: 2,
+      webName: "De Bruyne",
+      gwPoints: 8,
+      manager: "James",
+    },
+    {
+      id: 14,
+      webName: "Vardy",
+      gwPoints: 8,
+      manager: "Nicholas",
+    },
+    {
+      id: 8,
+      webName: "Mount",
+      gwPoints: 7,
+      manager: "Laurie",
+    },
+    {
+      id: 5,
+      webName: "Fernandes",
+      gwPoints: 6,
+      manager: "Nicholas",
+    },
+    {
+      id: 16,
+      webName: "Calvert-Lewin",
+      gwPoints: 6,
+      manager: "James",
+    },
+    {
+      id: 3,
+      webName: "Salah",
+      gwPoints: 5,
+      manager: "Sean",
+    },
+    {
+      id: 15,
+      webName: "Bamford",
+      gwPoints: 5,
+      manager: "Ben",
+    },
+    {
+      id: 7,
+      webName: "Son",
+      gwPoints: 4,
+      manager: "Sean",
+    },
+    {
+      id: 18,
+      webName: "Zaha",
+      gwPoints: 4,
+      manager: "Laurie",
+    },
+    {
+      id: 4,
+      webName: "Kane",
+      gwPoints: 3,
+      manager: "Laurie",
+    },
+    {
+      id: 13,
+      webName: "Aubameyang",
+      gwPoints: 3,
+      manager: "Laurie",
+    },
+    {
+      id: 17,
+      webName: "Mané",
+      gwPoints: 3,
+      manager: "Sean",
+    },
+    {
+      id: 11,
+      webName: "Trent",
+      gwPoints: 2,
+      manager: "James",
+    },
+    {
+      id: 9,
+      webName: "Grealish",
+      gwPoints: 1,
+      manager: "Nicholas",
+    },
+    {
+      id: 20,
+      webName: "Maddison",
+      gwPoints: 1,
+      manager: "Ben",
+    },
+  ],
+};
+
+function TopScoringPlayers() {
+  return (
+    <div className="grid items-center w-full h-full">
+      {topScoringPlayers.players.map((player) => (
+        <div
+          className="grid justify-center grid-cols-[1fr_1fr_30px] gap-2 px-1 py-2 bg-gray-600"
+          key={player.id}
+        >
+          <div>{player.manager}</div>
+          <div>{player.webName}</div>
+          <div>{player.gwPoints}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function ManagerTable() {
   return (
-    <table className="text-right border border-gray-100 table-auto w-[600px] h-2/4">
-      <thead className="text-gray-100 bg-gray-700">
+    <table className="text-right border border-gray-500 table-auto w-[600px] h-2/4 text-gray-500">
+      <thead className="text-gray-100 bg-violet-600">
         <tr>
           <th className="px-4 py-3 ">Rank</th>
           <th className="px-4 py-3 text-left">Team</th>
@@ -71,12 +213,12 @@ function ManagerTable() {
 function App() {
   return (
     <div className="flex flex-row min-h-screen text-gray-100 bg-gray-700">
-      <aside className="w-64 transition-transform duration-150 ease-in transform -translate-x-full bg-gray-900 sidebar md:shadow md:translate-x-0">
+      <aside className="w-64 transition-transform duration-150 ease-in transform -translate-x-full bg-gray-900 md:shadow md:translate-x-0">
         <div className="flex items-center justify-center py-4 sidebar-header">
           <div className="inline-flex">
             <a href="#" className="inline-flex flex-row items-center">
               <svg
-                className="w-10 h-10 text-red-400"
+                className="w-10 h-10 text-violet-500"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -181,7 +323,7 @@ function App() {
           </ul>
         </div>
       </aside>
-      <main className="flex flex-col flex-grow -ml-64 text-gray-100 transition-all duration-150 ease-in main md:ml-0">
+      <main className="flex flex-col flex-grow -ml-64 overflow-y-scroll text-gray-100 transition-all duration-150 ease-in main md:ml-0">
         <header className="px-4 py-4 header">
           <div className="flex flex-row items-center header-content">
             <div className="flex ml-auto">
@@ -201,16 +343,26 @@ function App() {
           </div>
         </header>
 
-        <div className="container px-6 mx-auto md:px-10 lg:px-12">
-          <div className="text-gray-100 ">
+        <div className="container px-6 mx-auto text-gray-100 md:px-10 lg:px-12">
+          <div className="">
             <h2 className="mb-8 text-4xl">League Name</h2>
-            <h3 className="mb-2 text-2xl">
-              GW 32{" "}
-              <span className="text-sm font-thin text-emerald-500">live</span>
-            </h3>
           </div>
-          <div className="flex h-full text-gray-700">
-            <ManagerTable />
+          <div className="flex flex-col justify-between h-full md:flex-row">
+            <div>
+              <h3 className="mb-3 text-2xl word-space-tight">
+                GW{" "}
+                <span className="word-space-tight">
+                  32 <span className="text-sm text-emerald-400 ">live</span>
+                </span>
+              </h3>
+              <ManagerTable />
+            </div>
+            <div className="overflow-scroll">
+              <h3 className="px-4 py-2 mb-3 text-sm bg-violet-600">
+                Top GW Scorers
+              </h3>
+              <TopScoringPlayers />
+            </div>
           </div>
         </div>
       </main>

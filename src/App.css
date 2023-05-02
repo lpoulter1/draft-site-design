@@ -1,0 +1,7 @@
+.word-space-tight {
+  word-spacing: -0.7ch;
+}
+
+.word-space-tighter {
+  word-spacing: -0.9ch;
+}
