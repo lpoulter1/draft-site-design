@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Roboto Mono";
+    src: url("./assets/fonts/RobotoMono-VariableFont_wght.ttf");
+  }
+
+  @font-face {
+    font-family: "IBMPlexMono";
+    font-weight: 100;
+    src: url("./assets/fonts/IBMPlexMono-Thin.ttf");
+  }
+
+  @font-face {
+    font-family: "IBMPlexMono";
+    font-weight: 200;
+    src: url("./assets/fonts/IBMPlexMono-ExtraLight.ttf");
+  }
+
+  @font-face {
+    font-family: "IBMPlexMono";
+    font-weight: 300;
+    src: url("./assets/fonts/IBMPlexMono-Light.ttf");
+  }
+
+  @font-face {
+    font-family: "IBMPlexMono";
+    font-weight: 400;
+    src: url("./assets/fonts/IBMPlexMono-Regular.ttf");
+  }
+  @font-face {
+    font-family: "IBMPlexMono";
+    font-weight: 500;
+    src: url("./assets/fonts/IBMPlexMono-Medium.ttf");
+  }
+
+  @font-face {
+    font-family: "IBMPlexMono";
+    font-weight: 500;
+    src: url("./assets/fonts/IBMPlexMono-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "IBMPlexMono";
+    font-weight: 600;
+    src: url("./assets/fonts/IBMPlexMono-SemiBold.ttf");
+  }
+
+  @font-face {
+    font-family: "IBMPlexMono";
+    font-weight: 700;
+    src: url("./assets/fonts/IBMPlexMono-Bold.ttf");
+  }
+
+  html {
+    font-family: "IBMPlexMono", monospace;
+  }
+}
