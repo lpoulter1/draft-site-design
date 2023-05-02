@@ -185,7 +185,7 @@ function TopScoringPlayers() {
 
 function ManagerTable() {
   return (
-    <table className=" border border-gray-500 table-auto w-full sm:w-[600px] h-2/4 text-gray-600 text-sm">
+    <table className=" border border-gray-500 table-auto w-full md:w-[600px] h-2/4 text-gray-600 text-sm mr-8">
       <thead className="text-gray-100 bg-violet-600 sm:text-left">
         <tr>
           <th className="px-2 py-3 sm:py-2 sm:px-4">Rank</th>
@@ -240,7 +240,7 @@ function App() {
             <li>
               <a
                 href="#"
-                className="flex flex-row items-center h-10 px-3 text-gray-700 bg-gray-100 rounded-lg"
+                className="flex flex-row items-center h-10 px-3 text-gray-700 bg-gray-100 "
               >
                 <span className="flex items-center justify-center text-lg text-gray-400">
                   <svg
@@ -261,7 +261,7 @@ function App() {
             <li>
               <a
                 href="#"
-                className="flex flex-row items-center h-10 px-3 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-gray-100"
+                className="flex flex-row items-center h-10 px-3 text-gray-300 hover:bg-gray-700 hover:text-gray-100"
               >
                 <span className="flex items-center justify-center text-lg text-gray-400">
                   <svg
@@ -285,7 +285,7 @@ function App() {
             <li>
               <a
                 href="#"
-                className="flex flex-row items-center h-10 px-3 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-gray-100"
+                className="flex flex-row items-center h-10 px-3 text-gray-300 hover:bg-gray-700 hover:text-gray-100"
               >
                 <span className="flex items-center justify-center text-lg text-gray-400">
                   <svg
@@ -308,7 +308,7 @@ function App() {
             <li>
               <a
                 href="#"
-                className="flex flex-row items-center h-10 px-3 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-gray-100"
+                className="flex flex-row items-center h-10 px-3 text-gray-300 hover:bg-gray-700 hover:text-gray-100"
               >
                 <span className="flex items-center justify-center text-lg text-gray-400">
                   <svg
