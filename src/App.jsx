@@ -265,7 +265,7 @@ function App() {
             <li>
               <a
                 href="#"
-                className="flex flex-row items-center h-10 px-3 text-gray-700 bg-gray-100 "
+                className="flex flex-row items-center h-10 px-3 text-gray-300 hover:bg-gray-700 hover:text-gray-100"
               >
                 <span className="flex items-center justify-center text-lg text-gray-400">
                   <svg
@@ -310,7 +310,7 @@ function App() {
             <li>
               <a
                 href="#"
-                className="flex flex-row items-center h-10 px-3 text-gray-300 hover:bg-gray-700 hover:text-gray-100"
+                className="flex flex-row items-center h-10 px-3 text-gray-700 bg-gray-100 hover:bg-gray-700 hover:text-gray-100"
               >
                 <span className="flex items-center justify-center text-lg text-gray-400">
                   <svg
@@ -322,7 +322,7 @@ function App() {
                   >
                     <path
                       stroke="currentColor"
-                      strokeLinecap="round"
+                      strokeLinecap="rounash"
                       d="M15 9h6v9c0 .943 0 1.414-.293 1.707C20.414 20 19.943 20 19 20h-4V9ZM3 9h6v11H5c-.943 0-1.414 0-1.707-.293C3 19.414 3 18.943 3 18V9ZM9 9h6v11H9zM3 6c0-.943 0-1.414.293-1.707C3.586 4 4.057 4 5 4h14c.943 0 1.414 0 1.707.293C21 4.586 21 5.057 21 6v3H3V6Z"
                     />
                   </svg>
