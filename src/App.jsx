@@ -362,11 +362,27 @@ function Sidebar({ setPage, currentPage }) {
 }
 
 function TransfersPage() {
-  return <div>Transfers</div>;
+  return (
+    <div className="container px-6 mx-auto text-gray-100 md:px-10 lg:px-12">
+      <h3 className="mb-3 text-2xl word-space-tight">Transfers</h3>
+    </div>
+  );
 }
 
 function DashbordPage() {
-  return <div>Dashbord</div>;
+  return (
+    <div className="container px-6 mx-auto text-gray-100 md:px-10 lg:px-12">
+      <h3 className="mb-3 text-2xl word-space-tight">Dashboard</h3>
+      <p>Relevant stats to react to</p>
+      <ul>
+        <li>Current GW stats althou maybe current GW could be it's own page</li>
+        <li>Alerts! 3 hours until deadline set your team etc</li>
+        <li>Current GW status, live/1hours etc</li>
+        <li>Current GW fixtures</li>
+        <li>Trends</li>
+      </ul>
+    </div>
+  );
 }
 
 function App() {
