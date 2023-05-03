@@ -442,12 +442,12 @@ function App() {
     <div className="flex flex-row min-h-screen overflow-scroll text-gray-100 bg-gray-700">
       {!sidebarOpen && (
         <button
-          className="w-12 h-12 p-4 cursor-pointer"
+          className="w-12 h-12 mt-1 ml-1 cursor-pointer h-content"
           onClick={() => setsidebarOpen(true)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8 text-gray-100"
+            className="w-8 h-8 text-gray-100 "
           >
             <line
               x1="4.8"
@@ -504,7 +504,7 @@ function App() {
 
 function TablePage() {
   return (
-    <div className="container px-6 mx-auto text-gray-100 md:px-10 lg:px-12">
+    <div className="container px-4 mx-auto text-gray-100 md:px-10 lg:px-12">
       <div className="">
         <h2 className="mb-8 text-4xl">Drafty Boys</h2>
       </div>
