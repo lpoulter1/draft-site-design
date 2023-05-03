@@ -410,7 +410,7 @@ function DashbordPage() {
 }
 
 function App() {
-  const [page, setPage] = useState("dashboard");
+  const [page, setPage] = useState("table");
   const [sidebarOpen, setsidebarOpen] = useState(false);
 
   useEffect(() => {
