@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import "./App.css";
+import { useState } from "react";
 import { TeamPicker } from "./TeamPicker";
 import avatarIcon from "./assets/avatarIcon.svg";
 
@@ -212,12 +214,16 @@ function ManagerTable() {
   );
 }
 
-function Sidebar() {
+function Sidebar({ setPage, currentPage }) {
   return (
     <aside className="hidden w-[256px] bg-gray-900 md:shadow md:block shrink-0">
       <div className="flex items-center justify-center py-4">
         <div className="inline-flex">
-          <a href="#" className="inline-flex flex-row items-center">
+          <a
+            href="#"
+            className="inline-flex flex-row items-center"
+            onClick={() => setPage()}
+          >
             <svg
               className="w-10 h-10 text-violet-500"
               fill="currentColor"
@@ -240,7 +246,12 @@ function Sidebar() {
           <li>
             <a
               href="#"
-              className="flex flex-row items-center h-10 px-3 text-gray-300 hover:bg-gray-700 hover:text-gray-100"
+              className={`flex flex-row items-center h-10 px-3 ${
+                currentPage === "dashboard"
+                  ? "text-gray-700 bg-gray-100"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-gray-100"
+              }`}
+              onClick={() => setPage("dashboard")}
             >
               <span className="flex items-center justify-center text-lg text-gray-400">
                 <svg
@@ -261,7 +272,12 @@ function Sidebar() {
           <li>
             <a
               href="#"
-              className="flex flex-row items-center h-10 px-3 text-gray-300 hover:bg-gray-700 hover:text-gray-100"
+              className={`flex flex-row items-center h-10 px-3 ${
+                currentPage === "pick-team"
+                  ? "text-gray-700 bg-gray-100"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-gray-100"
+              }`}
+              onClick={() => setPage("pick-team")}
             >
               <span className="flex items-center justify-center text-lg text-gray-400">
                 <svg
@@ -285,7 +301,12 @@ function Sidebar() {
           <li>
             <a
               href="#"
-              className="flex flex-row items-center h-10 px-3 text-gray-700 bg-gray-100 hover:bg-gray-700 hover:text-gray-100"
+              className={`flex flex-row items-center h-10 px-3 ${
+                currentPage === "table"
+                  ? "text-gray-700 bg-gray-100"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-gray-100"
+              }`}
+              onClick={() => setPage("table")}
             >
               <span className="flex items-center justify-center text-lg text-gray-400">
                 <svg
@@ -308,7 +329,12 @@ function Sidebar() {
           <li>
             <a
               href="#"
-              className="flex flex-row items-center h-10 px-3 text-gray-300 hover:bg-gray-700 hover:text-gray-100"
+              className={`flex flex-row items-center h-10 px-3 ${
+                currentPage === "transfers"
+                  ? "text-gray-700 bg-gray-100"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-gray-100"
+              }`}
+              onClick={() => setPage("transfers")}
             >
               <span className="flex items-center justify-center text-lg text-gray-400">
                 <svg
@@ -335,7 +361,32 @@ function Sidebar() {
   );
 }
 
+function TransfersPage() {
+  return <div>Transfers</div>;
+}
+
+function DashbordPage() {
+  return <div>Dashbord</div>;
+}
+
 function App() {
+  const [page, setPage] = useState("dashboard");
+
+  const getPage = () => {
+    switch (page) {
+      case "dashboard":
+        return <DashbordPage />;
+      case "pick-team":
+        return <PickTeamPage />;
+      case "table":
+        return <TablePage />;
+      case "transfers":
+        return <TransfersPage />;
+      default:
+        return <DashbordPage />;
+    }
+  };
+
   return (
     <div className="flex flex-row min-h-screen overflow-scroll text-gray-100 bg-gray-700">
       <button className="w-8 h-8 p-4 cursor-pointer display:block md:hidden">
@@ -363,7 +414,7 @@ function App() {
           ></line>
         </svg>
       </button>
-      <Sidebar />
+      <Sidebar setPage={setPage} currentPage={page} />
 
       <main className="flex flex-col w-full text-gray-100">
         <header className="w-full px-4 py-4">
@@ -384,9 +435,7 @@ function App() {
             </div>
           </div>
         </header>
-
-        <TablePage />
-        <TeamPickerPage />
+        {getPage()}
       </main>
     </div>
   );
@@ -419,7 +468,7 @@ function TablePage() {
   );
 }
 
-function TeamPickerPage() {
+function PickTeamPage() {
   return (
     <div className="container px-6 mx-auto text-gray-100 md:px-10 lg:px-12">
       <div className="flex flex-col justify-between h-full md:flex-row">
