@@ -387,7 +387,7 @@ function Sidebar({ setPage, currentPage, open, setIsOpen }) {
 
 function TransfersPage() {
   return (
-    <div className="container px-6 mx-auto text-gray-100 md:px-10 lg:px-12">
+    <div className="container px-4 mx-auto text-gray-100 md:px-10 lg:px-12">
       <h3 className="mb-3 text-2xl word-space-tight">Transfers</h3>
     </div>
   );
@@ -395,7 +395,7 @@ function TransfersPage() {
 
 function DashbordPage() {
   return (
-    <div className="container px-6 mx-auto text-gray-100 md:px-10 lg:px-12">
+    <div className="container px-4 mx-auto text-gray-100 md:px-10 lg:px-12">
       <h3 className="mb-3 text-2xl word-space-tight">Dashboard</h3>
       <p>Relevant stats to react to</p>
       <ul>
@@ -410,8 +410,8 @@ function DashbordPage() {
 }
 
 function App() {
-  const [page, setPage] = useState("table");
-  const [sidebarOpen, setsidebarOpen] = useState(true);
+  const [page, setPage] = useState("pick-team");
+  const [sidebarOpen, setsidebarOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -442,7 +442,7 @@ function App() {
     <div className="flex flex-row min-h-screen text-gray-100 bg-gray-700">
       {!sidebarOpen && (
         <button
-          className="mt-2 ml-2 cursor-pointer h-fit w-fit"
+          className="fixed mt-2 ml-2 cursor-pointer h-fit w-fit"
           onClick={() => setsidebarOpen(true)}
         >
           <svg
@@ -504,7 +504,7 @@ function App() {
 
 function TablePage() {
   return (
-    <div className="container pr-4 text-gray-100 pl-2mx-auto md:px-10 lg:px-12">
+    <div className="container pl-2 pr-4 mx-auto text-gray-100 md:px-10 lg:px-12">
       <div className="">
         <h2 className="mb-8 text-4xl">Drafty Boys</h2>
       </div>
@@ -531,9 +531,9 @@ function TablePage() {
 
 function PickTeamPage() {
   return (
-    <div className="container px-6 mx-auto text-gray-100 md:px-10 lg:px-12">
+    <div className="container px-4 mx-auto text-gray-100 md:px-10 lg:px-12">
       <div className="flex flex-col justify-between h-full md:flex-row">
-        <div>
+        <div className="w-full">
           <h3 className="mb-3 text-2xl word-space-tight">
             GW <span className="word-space-tight">32</span>
           </h3>
