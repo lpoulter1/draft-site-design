@@ -3,7 +3,7 @@ import Kit2 from "./kits/2.png";
 import ARS from "./kits/ars.png";
 import NEW from "./kits/new.png";
 import TOT from "./kits/tot.png";
-import Kit7 from "./kits/7.png";
+
 import CHE from "./kits/che.png";
 import Kit11 from "./kits/11.png";
 import Kit12 from "./kits/12.png";
