@@ -43,7 +43,7 @@ function Formation({ legal = true }) {
 
 export function TeamPicker() {
   return (
-    <>
+    <div className="flex-col items-center justify-center sm:flex">
       <div className="grid green-gradient relative grid-cols-[1fr] max-w-[900px] max-h-screen min-h-[75vh] md:justify-center md:px-12 md:py-6 grid-rows-[repeat(5,100px) lg:grid-rows-[repeat(5,130px)] 2xl:grid-rows-[repeat(5,150px)]">
         <div className="absolute right-2 top-2">
           <Formation />
@@ -79,10 +79,10 @@ export function TeamPicker() {
           <Player {...playerData[12]} />
         </div>
       </div>
-      <button className="flex items-center justify-center w-full h-10 max-w-lg px-1 py-3 mt-4 border border-gray-200 bg-violet-600 hover:bg-violet-500">
+      <button className="flex items-center justify-center w-full h-10 px-1 py-3 mt-4 border border-gray-200 sm:w-80 bg-violet-600 hover:bg-violet-500">
         Save Team
       </button>
-    </>
+    </div>
   );
 }
 

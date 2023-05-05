@@ -531,7 +531,7 @@ function TablePage() {
 
 function PickTeamPage() {
   return (
-    <div className="container px-4 mx-auto text-gray-100 md:px-10 lg:px-12">
+    <div className="container px-4 pb-8 mx-auto text-gray-100 md:px-10 lg:px-12">
       <div className="flex flex-col justify-between h-full md:flex-row">
         <div className="w-full">
           <h3 className="mb-3 text-2xl word-space-tight">
