@@ -91,7 +91,7 @@ function Player({
 }) {
   const kit = kits[teamShortName];
   return (
-    <div className="flex flex-col items-center gap-2 transition ease-in-out rounded cursor-pointer sm:px-4 sm:py-2 sm:w-32 delay-50 duration-250 no-wrap whitespace-nowrap hover:bg-emerald-800 hover:-translate-y-1">
+    <div className="flex flex-col items-center gap-2 px-[1px] py-1 transition ease-in-out rounded cursor-pointer sm:px-4 sm:py-2 sm:w-32 delay-50 duration-250 no-wrap whitespace-nowrap hover:bg-emerald-800 hover:-translate-y-1">
       <img src={kit} alt="" className="w-10 h-auto sm:w-14" />
       <div className="text-xs">{webName}</div>
       <div className="hidden text-xs sm:block">{position}</div>
