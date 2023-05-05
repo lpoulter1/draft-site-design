@@ -43,41 +43,46 @@ function Formation({ legal = true }) {
 
 export function TeamPicker() {
   return (
-    <div className="grid relative grid-cols-[1fr] max-w-[900px] max-h-screen min-h-[500px] bg-emerald-600 md:justify-center md:px-16 md:py-8 grid-rows-[repeat(5,100px) sm:grid-rows-[repeat(5,150px)]">
-      <div className="absolute right-2 top-2">
-        <Formation />
-      </div>
+    <>
+      <div className="grid relative grid-cols-[1fr] max-w-[900px] max-h-screen min-h-[500px] bg-emerald-600 md:justify-center md:px-16 md:py-8 grid-rows-[repeat(5,100px) sm:grid-rows-[repeat(5,150px)]">
+        <div className="absolute right-2 top-2">
+          <Formation />
+        </div>
 
-      {/* {playerData.map((player) => (
+        {/* {playerData.map((player) => (
         <Player key={player.id} {...player} />
       ))} */}
-      <div className="flex items-center justify-around w-full px-1 border border-gray-200 min-h-40">
-        <Player {...playerData[5]} />
+        <div className="flex items-center justify-around w-full px-1 border border-gray-200 min-h-40">
+          <Player {...playerData[5]} />
+        </div>
+        <div className="flex items-center justify-around w-full px-1 border border-t-0 border-gray-200 overflow-clip min-h-40">
+          <Player {...playerData[3]} />
+          <Player {...playerData[6]} />
+          <Player {...playerData[10]} />
+          <Player {...playerData[11]} />
+        </div>
+        <div className="flex items-center justify-around w-full px-1 border border-t-0 border-gray-200 min-h-40">
+          <Player {...playerData[0]} />
+          <Player {...playerData[1]} />
+          <Player {...playerData[4]} />
+          <Player {...playerData[0]} />
+        </div>
+        <div className="flex items-center justify-around w-full px-1 border border-t-0 border-gray-200 min-h-40">
+          <Player {...playerData[2]} />
+          <Player {...playerData[8]} />
+        </div>
+        <div className="flex flex-wrap items-center justify-around w-full px-1 border border-t-0 border-gray-200 min-h-40">
+          <Player {...playerData[8]} />
+          <Player {...playerData[9]} />
+          <Player {...playerData[10]} />
+          <Player {...playerData[11]} />
+          <Player {...playerData[12]} />
+        </div>
       </div>
-      <div className="flex items-center justify-around w-full px-1 border border-t-0 border-gray-200 overflow-clip min-h-40">
-        <Player {...playerData[3]} />
-        <Player {...playerData[6]} />
-        <Player {...playerData[10]} />
-        <Player {...playerData[11]} />
-      </div>
-      <div className="flex items-center justify-around w-full px-1 border border-t-0 border-gray-200 min-h-40">
-        <Player {...playerData[0]} />
-        <Player {...playerData[1]} />
-        <Player {...playerData[4]} />
-        <Player {...playerData[0]} />
-      </div>
-      <div className="flex items-center justify-around w-full px-1 border border-t-0 border-gray-200 min-h-40">
-        <Player {...playerData[2]} />
-        <Player {...playerData[8]} />
-      </div>
-      <div className="flex flex-wrap items-center justify-around w-full px-1 border border-t-0 border-gray-200 min-h-40">
-        <Player {...playerData[8]} />
-        <Player {...playerData[9]} />
-        <Player {...playerData[10]} />
-        <Player {...playerData[11]} />
-        <Player {...playerData[12]} />
-      </div>
-    </div>
+      <button className="flex items-center justify-center w-full h-10 max-w-lg px-1 py-3 mt-4 border border-gray-200 bg-violet-600 hover:bg-violet-500">
+        Save Team
+      </button>
+    </>
   );
 }
 
