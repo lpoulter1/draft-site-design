@@ -44,7 +44,7 @@ function Formation({ legal = true }) {
 export function TeamPicker() {
   return (
     <>
-      <div className="grid relative grid-cols-[1fr] max-w-[900px] max-h-screen min-h-[500px] bg-emerald-600 md:justify-center md:px-16 md:py-8 grid-rows-[repeat(5,100px) sm:grid-rows-[repeat(5,150px)]">
+      <div className="grid green-gradient relative grid-cols-[1fr] max-w-[900px] max-h-screen min-h-[75vh] md:justify-center md:px-16 md:py-8 grid-rows-[repeat(5,100px) sm:grid-rows-[repeat(5,150px)]">
         <div className="absolute right-2 top-2">
           <Formation />
         </div>
