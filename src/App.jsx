@@ -255,7 +255,7 @@ function Sidebar({ setPage, currentPage, open, setIsOpen }) {
                   }`}
                   onClick={() =>
                     setPage(() => {
-                      setIsOpen(false);
+                      setIsOpen(true);
                       return "dashboard";
                     })
                   }
@@ -286,7 +286,7 @@ function Sidebar({ setPage, currentPage, open, setIsOpen }) {
                   }`}
                   onClick={() =>
                     setPage(() => {
-                      setIsOpen(false);
+                      setIsOpen(true);
                       return "pick-team";
                     })
                   }
@@ -320,7 +320,7 @@ function Sidebar({ setPage, currentPage, open, setIsOpen }) {
                   }`}
                   onClick={() =>
                     setPage(() => {
-                      setIsOpen(false);
+                      setIsOpen(true);
                       return "table";
                     })
                   }
@@ -353,7 +353,7 @@ function Sidebar({ setPage, currentPage, open, setIsOpen }) {
                   }`}
                   onClick={() =>
                     setPage(() => {
-                      setIsOpen(false);
+                      setIsOpen(true);
                       return "transfers";
                     })
                   }
@@ -411,7 +411,7 @@ function DashbordPage() {
 
 function App() {
   const [page, setPage] = useState("table");
-  const [sidebarOpen, setsidebarOpen] = useState(false);
+  const [sidebarOpen, setsidebarOpen] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
