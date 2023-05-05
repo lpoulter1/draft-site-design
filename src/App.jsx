@@ -439,7 +439,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-row min-h-screen overflow-scroll text-gray-100 bg-gray-700">
+    <div className="flex flex-row min-h-screen text-gray-100 bg-gray-700">
       {!sidebarOpen && (
         <button
           className="mt-2 ml-2 cursor-pointer h-fit w-fit"
@@ -518,7 +518,7 @@ function TablePage() {
           </h3>
           <ManagerTable />
         </div>
-        <div className="overflow-scroll">
+        <div className="">
           <h3 className="px-4 py-2 mb-3 text-sm bg-violet-600">
             Top GW Scorers
           </h3>
