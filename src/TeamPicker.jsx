@@ -72,11 +72,11 @@ export function TeamPicker() {
           <Player {...playerData[8]} />
         </div>
         <div className="flex flex-wrap items-center justify-around w-full px-1 border border-t-0 border-gray-200 min-h-40">
-          <Player {...playerData[8]} />
-          <Player {...playerData[9]} />
-          <Player {...playerData[10]} />
-          <Player {...playerData[11]} />
-          <Player {...playerData[12]} />
+          <Player {...playerData[8]} order={1} />
+          <Player {...playerData[9]} order={2} />
+          <Player {...playerData[10]} order={3} />
+          <Player {...playerData[11]} order={4} />
+          <Player {...playerData[12]} order={5} />
         </div>
       </div>
       <button className="flex items-center justify-center w-full h-10 px-1 py-3 mt-4 border border-gray-200 sm:w-80 bg-violet-600 hover:bg-violet-500">
@@ -93,6 +93,7 @@ function Player({
   secondName,
   teamShortName,
   webName,
+  order,
 }) {
   const kit = kits[teamShortName];
   return (
@@ -100,6 +101,7 @@ function Player({
       <img src={kit} alt="" className="w-10 h-auto sm:w-14" />
       <div className="text-xs">{webName}</div>
       <div className="hidden text-xs uppercase md:block">{position}</div>
+      <div className="text-xs">{order}</div>
     </div>
   );
 }
