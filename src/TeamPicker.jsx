@@ -66,8 +66,6 @@ export function TeamPicker() {
           <Player {...playerData[1]} />
           <Player {...playerData[4]} />
           <Player {...playerData[0]} />
-          <Player {...playerData[0]} />
-          <Player {...playerData[0]} />
         </div>
         <div className="flex items-center justify-around w-full px-1 border border-t-0 border-gray-200 min-h-40">
           <Player {...playerData[2]} />
