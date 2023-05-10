@@ -3,6 +3,7 @@ import "./App.css";
 import { useState } from "react";
 import { TeamPicker } from "./TeamPicker";
 import { Sidebar } from "./Sidebar";
+import { Toast } from "./Toast";
 
 import avatarIcon from "./assets/avatarIcon.svg";
 
@@ -260,6 +261,7 @@ function App() {
 
   return (
     <div className="flex flex-row min-h-screen text-gray-100 bg-gray-700">
+      <Toast message="team saved" />
       <Sidebar setPage={setPage} currentPage={page} />
 
       <main className="flex flex-col w-full text-gray-100">
