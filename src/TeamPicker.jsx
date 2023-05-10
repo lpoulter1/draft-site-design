@@ -44,7 +44,7 @@ function Formation({ legal = true }) {
 export function TeamPicker() {
   return (
     <div className="flex-col items-center justify-center sm:flex">
-      <div className="grid green-gradient relative grid-cols-[1fr] max-w-[900px] max-h-screen min-h-[75vh] md:justify-center md:px-12 md:py-6 grid-rows-[repeat(5,100px) lg:grid-rows-[repeat(5,130px)] 2xl:grid-rows-[repeat(5,150px)]">
+      <div className="grid green-gradient relative grid-cols-[1fr] max-w-[900px] max-h-screen min-h-[75vh] md:justify-center md:px-12 md:py-6 grid-rows-auto ">
         <div className="absolute right-2 top-2">
           <Formation />
         </div>
@@ -65,6 +65,8 @@ export function TeamPicker() {
           <Player {...playerData[0]} />
           <Player {...playerData[1]} />
           <Player {...playerData[4]} />
+          <Player {...playerData[0]} />
+          <Player {...playerData[0]} />
           <Player {...playerData[0]} />
         </div>
         <div className="flex items-center justify-around w-full px-1 border border-t-0 border-gray-200 min-h-40">
@@ -97,8 +99,8 @@ function Player({
 }) {
   const kit = kits[teamShortName];
   return (
-    <div className="flex flex-col items-center gap-1 px-[1px] py-1 transition ease-in-out rounded cursor-pointer sm:px-4 sm:py-2 sm:w-32 delay-50 duration-250 no-wrap whitespace-nowrap hover:bg-emerald-800 hover:-translate-y-1">
-      <img src={kit} alt="" className="w-10 h-auto sm:w-14" />
+    <div className="flex flex-col items-center gap-1 px-[1px] py-1 transition ease-in-out rounded cursor-pointer sm:px-4 sm:py-6 sm:w-32 delay-50 duration-250 no-wrap whitespace-nowrap hover:bg-emerald-800 hover:-translate-y-1">
+      <img src={kit} alt="" className="w-12 h-auto sm:w-16" />
       <div className="text-xs">{webName}</div>
       <div className="hidden text-xs uppercase md:block">{position}</div>
       <div className="text-xs">{order}</div>
