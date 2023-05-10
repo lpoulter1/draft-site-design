@@ -44,7 +44,7 @@ function Formation({ legal = true }) {
 export function TeamPicker() {
   return (
     <div className="flex-col items-center justify-center sm:flex">
-      <div className="grid green-gradient relative grid-cols-[1fr] max-w-[900px] max-h-screen min-h-[75vh] md:justify-center md:px-12 md:py-6 grid-rows-auto ">
+      <div className="grid green-gradient relative grid-cols-[1fr] max-w-[900px] max-h-screen min-h-[75vh] md:justify-center md:px-14 md:py-6 grid-rows-auto ">
         <div className="absolute right-2 top-2">
           <Formation />
         </div>
