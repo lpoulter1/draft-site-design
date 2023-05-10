@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 
+// eslint-disable-next-line react/prop-types
 export function Sidebar({ currentPage, setPage }) {
   const { width } = useScreenSize();
   const [isOpen, setIsOpen] = useState();
