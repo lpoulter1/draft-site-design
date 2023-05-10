@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 
 export function Sidebar({ currentPage, setPage }) {
   const { width } = useScreenSize();
@@ -14,45 +15,20 @@ export function Sidebar({ currentPage, setPage }) {
   }, [width]);
 
   return (
-    <>
-      {!isOpen && (
-        <button
-          className="fixed mt-2 ml-2 cursor-pointer h-fit w-fit"
-          onClick={() => setIsOpen(true)}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8 text-gray-100 "
-          >
-            <line
-              x1="4.8"
-              y1="9.6"
-              x2="27.2"
-              y2="9.6"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-            ></line>
-            <line
-              x1="27.2"
-              y1="22.4"
-              x2="4.8"
-              y2="22.4"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-            ></line>
-          </svg>
-        </button>
-      )}
-      <>
+    <LayoutGroup>
+      <AnimatePresence>
         {isOpen && (
           <>
-            <div
-              className="fixed left-[256px] z-10 flex flex-col items-center justify-center w-full h-full bg-gray-900 bg-opacity-50 lg:hidden"
+            <motion.aside
+              layout
+              key="sidebar-aside"
               onClick={() => setIsOpen(false)}
-            ></div>
-            <aside className="w-[256px] bg-gray-900 md:shadow md:block shrink-0">
+              initial={{ x: -250 }}
+              animate={{ x: 0 }}
+              exit={{ x: -256, width: 0 }}
+              className="bg-gray-900 md:shadow md:block shrink-0 w-[256px]"
+              transition={{ type: "spring", bounce: 0 }}
+            >
               <div className="flex items-center justify-center py-4">
                 <div className="inline-flex">
                   <a
@@ -213,11 +189,51 @@ export function Sidebar({ currentPage, setPage }) {
                   </li>
                 </ul>
               </div>
-            </aside>
+            </motion.aside>
+            <motion.div
+              key="sidebar-overlay"
+              className="fixed z-10 flex flex-col items-center justify-center w-[calc(100vw-256px)] h-full bg-gray-900 bg-opacity-50 lg:hidden"
+              onClick={() => setIsOpen(false)}
+              initial={{ x: 0 }}
+              animate={{ x: 256 }}
+              exit={{ x: -256 }}
+              transition={{ type: "spring", bounce: 0 }}
+            ></motion.div>
           </>
         )}
-      </>
-    </>
+      </AnimatePresence>
+      {!isOpen && (
+        <motion.button
+          key="sidebar-button"
+          className="fixed mt-2 ml-2 cursor-pointer h-fit w-fit"
+          onClick={() => setIsOpen(true)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-8 h-8 text-gray-100 "
+          >
+            <line
+              x1="4.8"
+              y1="9.6"
+              x2="27.2"
+              y2="9.6"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+            ></line>
+            <line
+              x1="27.2"
+              y1="22.4"
+              x2="4.8"
+              y2="22.4"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+            ></line>
+          </svg>
+        </motion.button>
+      )}
+    </LayoutGroup>
   );
 }
 
