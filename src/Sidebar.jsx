@@ -21,9 +21,7 @@ export function Sidebar({ currentPage, setPage }) {
         {isOpen && (
           <>
             <motion.aside
-              layout
               key="sidebar-aside"
-              onClick={() => setIsOpen(false)}
               initial={{ x: -250 }}
               animate={{ x: 0 }}
               exit={{ x: -256, width: 0 }}
