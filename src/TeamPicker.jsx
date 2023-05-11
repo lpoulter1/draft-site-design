@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import MUN from "./kits/mun.png";
 import Kit2 from "./kits/2.png";
 import ARS from "./kits/ars.png";
@@ -97,12 +98,15 @@ function Player({
 }) {
   const kit = kits[teamShortName];
   return (
-    <div className="flex flex-col items-center gap-1 px-[1px] py-1 transition ease-in-out rounded cursor-pointer sm:px-4 sm:py-6 sm:w-32 delay-50 duration-250 no-wrap whitespace-nowrap hover:bg-emerald-800 hover:-translate-y-1">
+    <motion.div
+      whileHover={{ y: -3 }}
+      className="flex flex-col items-center gap-1 px-[1px] py-1 rounded cursor-pointer sm:px-4 sm:py-6 sm:w-32 no-wrap whitespace-nowrap hover:bg-emerald-800 "
+    >
       <img src={kit} alt="" className="w-12 h-auto sm:w-16" />
       <div className="text-xs">{webName}</div>
       <div className="hidden text-xs uppercase md:block">{position}</div>
       <div className="text-xs">{order}</div>
-    </div>
+    </motion.div>
   );
 }
 
