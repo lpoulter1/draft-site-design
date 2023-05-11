@@ -71,7 +71,7 @@ export function TeamPicker() {
           <Player {...playerData[2]} />
           <Player {...playerData[8]} />
         </div>
-        <div className="flex flex-wrap items-center justify-around w-full px-1 border border-t-0 border-gray-200 min-h-40">
+        <div className="flex items-center justify-around w-full px-1 border border-t-0 border-gray-200 min-h-40">
           <Player {...playerData[8]} order={1} />
           <Player {...playerData[9]} order={2} />
           <Player {...playerData[10]} order={3} />
