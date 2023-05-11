@@ -4,6 +4,7 @@ import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 // eslint-disable-next-line react/prop-types
 export function Sidebar({ currentPage, setPage }) {
   const { width } = useScreenSize();
+  const [transfersAnimate, setTransfersAnimate] = useState(false);
   const [isOpen, setIsOpen] = useState();
 
   useEffect(() => {
@@ -64,7 +65,6 @@ export function Sidebar({ currentPage, setPage }) {
                       }`}
                       onClick={() =>
                         setPage(() => {
-                          setIsOpen(true);
                           return "dashboard";
                         })
                       }
@@ -95,7 +95,6 @@ export function Sidebar({ currentPage, setPage }) {
                       }`}
                       onClick={() =>
                         setPage(() => {
-                          setIsOpen(true);
                           return "pick-team";
                         })
                       }
@@ -129,7 +128,6 @@ export function Sidebar({ currentPage, setPage }) {
                       }`}
                       onClick={() =>
                         setPage(() => {
-                          setIsOpen(true);
                           return "table";
                         })
                       }
@@ -152,7 +150,7 @@ export function Sidebar({ currentPage, setPage }) {
                       <span className="ml-3">Table</span>
                     </a>
                   </li>
-                  <li>
+                  <motion.li whileHover="hover">
                     <a
                       href="#"
                       className={`flex flex-row items-center h-10 px-3 ${
@@ -160,14 +158,20 @@ export function Sidebar({ currentPage, setPage }) {
                           ? "text-gray-700 bg-gray-100"
                           : "text-gray-300 hover:bg-gray-700 hover:text-gray-100"
                       }`}
-                      onClick={() =>
+                      onClick={() => {
+                        setTransfersAnimate((p) => !p);
                         setPage(() => {
-                          setIsOpen(true);
                           return "transfers";
-                        })
-                      }
+                        });
+                      }}
                     >
-                      <span className="flex items-center justify-center text-lg text-gray-400">
+                      <motion.span
+                        className="flex items-center justify-center text-lg text-gray-400"
+                        animate={
+                          transfersAnimate ? { rotate: 180 } : { rotate: 0 }
+                        }
+                        transition={{ type: "spring", duration: 0.7 }}
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="1.5rem"
@@ -182,10 +186,10 @@ export function Sidebar({ currentPage, setPage }) {
                             d="M19.5 16.5H6m-.5-8H19M16 13l3.5 3.5L16 20m-7-8L5.5 8.5 9 5"
                           />
                         </svg>
-                      </span>
+                      </motion.span>
                       <span className="ml-3">Transfers</span>
                     </a>
-                  </li>
+                  </motion.li>
                 </ul>
               </div>
             </motion.aside>
